@@ -1,38 +1,7 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components'
+import React from 'react'
+import { useRouter } from 'next/router'
 import appConfig from '../config.json'
-
-function GlobalStyle() {
-  return (
-    <style global jsx>
-      {`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          list-style: none;
-        }
-        body {
-          font-family: 'Open Sans', sans-serif;
-        }
-        /* App fit Height */
-        html,
-        body,
-        #__next {
-          min-height: 100vh;
-          display: flex;
-          flex: 1;
-        }
-        #__next {
-          flex: 1;
-        }
-        #__next > * {
-          flex: 1;
-        }
-        /* ./App fit Height */
-      `}
-    </style>
-  )
-}
 
 function Titulo(props) {
   console.log(props)
@@ -68,11 +37,12 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-  const username = 'leolucena22'
+  //const username = 'leolucena22'
+  const [username, setUsername] = React.useState('leolucena22')
+  const roteamente = useRouter()
 
   return (
     <>
-      <GlobalStyle />
       <Box
         styleSheet={{
           display: 'flex',
@@ -107,6 +77,12 @@ export default function PaginaInicial() {
           {/* Formulário */}
           <Box
             as="form"
+            onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault() //remove o comportamento padrão do site (redirecionar para outra página quando submete um form)
+              console.log('Alguém submeteu o form')
+              roteamente.push('/chat') //Forma de fazer roteamento de páginas com o next
+              //window.location.href = '/chat' //Forma tradicional de fazer redirecionamente de páginas em JS
+            }}
             styleSheet={{
               display: 'flex',
               flexDirection: 'column',
@@ -128,7 +104,27 @@ export default function PaginaInicial() {
               {appConfig.name}
             </Text>
 
+            {/* <input
+              type="text"
+              value={username}
+              onChange={function (event) {
+                console.log('Usurário digitou', event.target.value)
+                //Onde está o valor
+                const valor = event.target.value
+                //Trocar o valor da variável através do React e avisa quem precisa
+                setUsername(valor)
+              }}
+            /> */}
+
             <TextField
+              value={username}
+              onChange={function (event) {
+                console.log('Usurário digitou', event.target.value)
+                //Onde está o valor
+                const valor = event.target.value
+                //Trocar o valor da variável através do React e avisa quem precisa
+                setUsername(valor)
+              }}
               fullWidth
               textFieldColors={{
                 neutral: {
@@ -139,6 +135,7 @@ export default function PaginaInicial() {
                 }
               }}
             />
+
             <Button
               type="submit"
               label="Entrar"
