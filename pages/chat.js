@@ -69,7 +69,9 @@ export default function ChatPage() {
           flex: 1,
           boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
           borderRadius: '15px',
-          backgroundColor: appConfig.theme.colors.neutrals[700],
+          // backgroundColor: appConfig.theme.colors.neutrals[700],
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
           height: '100%',
           maxWidth: '40%',
           maxHeight: '75vh',
@@ -154,7 +156,9 @@ function Header() {
         <Text variant="heading5">Chat</Text>
         <Button
           variant="tertiary"
-          colorVariant="neutral"
+          iconName="github"
+          colorVariant="light"
+          ButtonColorValues="green"
           label="Logout"
           href="/"
         />
