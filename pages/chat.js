@@ -55,7 +55,7 @@ export default function ChatPage() {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: appConfig.theme.colors.primary[500],
-        backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
+        backgroundImage: `url(https://lh3.googleusercontent.com/pw/AM-JKLXD6TcsjZl5iUlxHV_CcGjMR6zWoX2cl5iYfss1i-EN3QcDQZj-aXnet-0OOO_DhTgto0iIhs0aDnXltg0NhgSeqrG1_3wQwosY8wDDGH6jT8HhnpKqqnJaAeV-l6US9a_u8KjGx9D27v4qSovVlBRUpA=w1158-h652-no?authuser=0)`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundBlendMode: 'multiply',
@@ -68,11 +68,11 @@ export default function ChatPage() {
           flexDirection: 'column',
           flex: 1,
           boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-          borderRadius: '5px',
+          borderRadius: '15px',
           backgroundColor: appConfig.theme.colors.neutrals[700],
           height: '100%',
-          maxWidth: '95%',
-          maxHeight: '95vh',
+          maxWidth: '40%',
+          maxHeight: '75vh',
           padding: '32px'
         }}
       >
@@ -85,7 +85,7 @@ export default function ChatPage() {
             height: '80%',
             backgroundColor: appConfig.theme.colors.neutrals[600],
             flexDirection: 'column',
-            borderRadius: '5px',
+            borderRadius: '15px',
             padding: '16px'
           }}
         >

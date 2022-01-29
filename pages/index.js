@@ -15,6 +15,7 @@ function Titulo(props) {
             color: ${appConfig.theme.colors.neutrals['000']};
             font-size: 24px;
             font-weight: 600;
+            padding-bottom: 20px;
           }
         `}
       </style>
@@ -50,7 +51,7 @@ export default function PaginaInicial() {
           justifyContent: 'center',
           backgroundColor: appConfig.theme.colors.primary[500],
           backgroundImage:
-            'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+            'url(https://lh3.googleusercontent.com/pw/AM-JKLXD6TcsjZl5iUlxHV_CcGjMR6zWoX2cl5iYfss1i-EN3QcDQZj-aXnet-0OOO_DhTgto0iIhs0aDnXltg0NhgSeqrG1_3wQwosY8wDDGH6jT8HhnpKqqnJaAeV-l6US9a_u8KjGx9D27v4qSovVlBRUpA=w1158-h652-no?authuser=0)',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundBlendMode: 'multiply'
@@ -71,7 +72,9 @@ export default function PaginaInicial() {
             padding: '32px',
             margin: '16px',
             boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals[800]
+            // backgroundColor: appConfig.theme.colors.neutrals[800]
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(10px)'
           }}
         >
           {/* Formulário */}
@@ -131,7 +134,9 @@ export default function PaginaInicial() {
                   textColor: appConfig.theme.colors.neutrals[200],
                   mainColor: appConfig.theme.colors.neutrals[500],
                   mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800]
+                  // backgroundColor: appConfig.theme.colors.neutrals[800]
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)'
                 }
               }}
             />
@@ -158,8 +163,6 @@ export default function PaginaInicial() {
               alignItems: 'center',
               maxWidth: '200px',
               padding: '16px',
-              backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: '1px solid',
               borderColor: appConfig.theme.colors.neutrals[800],
               borderRadius: '10px',
               flex: 1,
@@ -169,7 +172,8 @@ export default function PaginaInicial() {
             <Image
               styleSheet={{
                 borderRadius: '50%',
-                marginBottom: '16px'
+                marginBottom: '16px',
+                boxShadow: '5px 5px 10px #000000'
               }}
               src={`https://github.com/${username}.png`}
             />
