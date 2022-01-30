@@ -83,7 +83,7 @@ export default function PaginaInicial() {
             onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault() //remove o comportamento padrão do site (redirecionar para outra página quando submete um form)
               console.log('Alguém submeteu o form')
-              roteamente.push('/chat') //Forma de fazer roteamento de páginas com o next
+              roteamente.push(`/chat?username=${username}`) //Forma de fazer roteamento de páginas com o next
               //window.location.href = '/chat' //Forma tradicional de fazer redirecionamente de páginas em JS
             }}
             styleSheet={{
