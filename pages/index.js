@@ -82,7 +82,7 @@ export default function PaginaInicial() {
             as="form"
             onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault() //remove o comportamento padrão do site (redirecionar para outra página quando submete um form)
-              console.log('Alguém submeteu o form')
+              // console.log('Alguém submeteu o form')
               roteamente.push(`/chat?username=${username}`) //Forma de fazer roteamento de páginas com o next
               //window.location.href = '/chat' //Forma tradicional de fazer redirecionamente de páginas em JS
             }}
@@ -122,7 +122,7 @@ export default function PaginaInicial() {
             <TextField
               value={username}
               onChange={function (event) {
-                console.log('Usurário digitou', event.target.value)
+                //console.log('Usurário digitou', event.target.value)
                 //Onde está o valor
                 const valor = event.target.value
                 //Trocar o valor da variável através do React e avisa quem precisa
@@ -136,7 +136,8 @@ export default function PaginaInicial() {
                   mainColorHighlight: appConfig.theme.colors.primary[500],
                   // backgroundColor: appConfig.theme.colors.neutrals[800]
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(10px)'
+                  backdropFilter: 'blur(10px)',
+                  borderColor: appConfig.theme.colors.primary[600]
                 }
               }}
             />

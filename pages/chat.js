@@ -105,7 +105,7 @@ export default function ChatPage() {
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(10px)',
           height: '100%',
-          maxWidth: '40%',
+          maxWidth: '80%',
           maxHeight: '75vh',
           padding: '32px'
         }}
@@ -264,7 +264,11 @@ function MessageList(props) {
             {/* {mensagem.texto.startsWith(':sticker:').toString()} */}
 
             {mensagem.texto.startsWith(':sticker:') ? (
-              <Image src={mensagem.texto.replace(':sticker:', '')} />
+              <Image
+                width="100px"
+                height="100px"
+                src={mensagem.texto.replace(':sticker:', '')}
+              />
             ) : (
               mensagem.texto
             )}
